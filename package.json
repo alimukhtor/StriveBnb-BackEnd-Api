@@ -27,6 +27,7 @@
     "express-list-endpoints": "^6.0.0",
     "node-modules": "^1.0.1",
     "nodemon": "^2.0.15",
+    "pg": "^8.7.1",
     "sequelize": "^6.12.2"
   }
 }

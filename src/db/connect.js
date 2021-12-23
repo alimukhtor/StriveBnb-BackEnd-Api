@@ -1,14 +1,20 @@
 import {Sequelize} from 'sequelize'
 
-import {DB_URL} from process.env
+const {DB_URL} = process.env
+
+
+ const sequelize = new Sequelize(DB_URL, {dialect: "postgres",
+    // dialectOptions: {       
+    //     ssl: {
+    //         require: true,
+    //         rejectUnauthorized: false,
+    //     },
+    // }
+})
 
 
 
-export const sequelize = new Sequelize(DB_URL, {dialect: "postgres"},)
-
-
-
-export const testDB = async () => {
+ export const testDB = async () => {
     try {
       await sequelize.authenticate({ logging: false });
       console.log("Can be established");
@@ -17,5 +23,5 @@ export const testDB = async () => {
     }
   };
 
-
+  export default sequelize
   

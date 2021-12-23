@@ -6,7 +6,15 @@ import sequelize, { testDB } from './db/connect.js'
 
 import User from './db/models/users/index.js'
 import House from './db/models/houses/index.js'
+// ******************** END OF MODELS ******************************
 
+
+// ******************** STARTING OF ROUTERS ******************************
+
+import userRouter from './services/users/user.js'
+import houseRouter from './services/houses/house.js'
+
+// ********************END OF ROUTERS ******************************
 
 const port = process.env.PORT || 3001
 const server = express()
@@ -19,6 +27,15 @@ House.belongsTo(User, { onDelete: "CASCADE" })
 
 export {User, House}
 
+// ************* ENDPOINTS HERE ************************
+server.use(express.json())
+server.use("/users", userRouter)
+server.use("/houses", houseRouter)
+
+
+
+// ************* ENDPOINTS ENDS HERE ************************
+
 
 // ************** TABLE CONNECTIONS ENDS HERE *********************
 server.listen(port, async()=> {
@@ -30,12 +47,5 @@ server.listen(port, async()=> {
 
 
 
-
-// ************* ENDPOINTS HERE ************************
-server.use(express.json())
-
-
-
-// ************* ENDPOINTS ENDS HERE ************************
 
 

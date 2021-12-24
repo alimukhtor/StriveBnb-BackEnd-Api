@@ -1,5 +1,5 @@
 import express from 'express'
-import {House, User} from '../../server.js'
+import {House, User, City} from '../../server.js'
 
 
 const houseRouter = express.Router()
@@ -7,7 +7,7 @@ const houseRouter = express.Router()
 houseRouter.get("/", async(request, response, next)=> {
     try {
         const houses = await House.findAll({
-            include:User
+            include:[User, City]
         })
         response.send(houses)
     } catch (error) {

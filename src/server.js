@@ -15,6 +15,7 @@ import City from './db/models/cities/index.js'
 
 import userRouter from './services/users/user.js'
 import houseRouter from './services/houses/house.js'
+import cityRouter from './services/cities/city.js'
 
 // ******************** END OF ROUTERS ******************************
 
@@ -36,6 +37,7 @@ export {User, House, City}
 server.use(express.json())
 server.use("/users", userRouter)
 server.use("/houses", houseRouter)
+server.use("/cities", cityRouter)
 
 
 

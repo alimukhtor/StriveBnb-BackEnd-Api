@@ -50,7 +50,7 @@ houseRouter.put("/:id", async(request, response, next)=> {
 })
 houseRouter.delete("/:id", async(request, response, next)=> {
     try {
-        const deleteHouse = await House.destroy({
+        await House.destroy({
             where:{
                 id:request.params.id
             }

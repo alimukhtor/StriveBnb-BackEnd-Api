@@ -6,6 +6,8 @@ import sequelize, { testDB } from './db/connect.js'
 
 import User from './db/models/users/index.js'
 import House from './db/models/houses/index.js'
+import City from './db/models/cities/index.js'
+
 // ******************** END OF MODELS ******************************
 
 
@@ -14,7 +16,7 @@ import House from './db/models/houses/index.js'
 import userRouter from './services/users/user.js'
 import houseRouter from './services/houses/house.js'
 
-// ********************END OF ROUTERS ******************************
+// ******************** END OF ROUTERS ******************************
 
 const port = process.env.PORT || 3001
 const server = express()
@@ -25,7 +27,10 @@ const server = express()
 User.hasMany(House, { onDelete: "CASCADE" })
 House.belongsTo(User, { onDelete: "CASCADE" })
 
-export {User, House}
+City.hasMany(House, { onDelete: "CASCADE" })
+House.belongsTo(City, { onDelete: "CASCADE" })
+
+export {User, House, City}
 
 // ************* ENDPOINTS HERE ************************
 server.use(express.json())

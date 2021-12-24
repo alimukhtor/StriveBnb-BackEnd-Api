@@ -23,9 +23,43 @@ houseRouter.post("/", async(request, response, next)=> {
         next(error)
     }
 })
-houseRouter.get("/:id", async(request, response, next)=> {})
-houseRouter.put("/:id", async(request, response, next)=> {})
-houseRouter.delete("/:id", async(request, response, next)=> {})
+houseRouter.get("/:id", async(request, response, next)=> {
+    try {
+       const getById = await House.findOne({
+           where:{
+               id:request.params.id
+           }
+       })
+       response.send(getById) 
+    } catch (error) {
+        next(error)
+    }
+})
+houseRouter.put("/:id", async(request, response, next)=> {
+    try {
+        const updateHouse = await House.update(request.body, {
+            where:{
+                id:request.params.id
+            }
+        })
+
+        response.send(updateHouse)
+    } catch (error) {
+        next(error)
+    }
+})
+houseRouter.delete("/:id", async(request, response, next)=> {
+    try {
+        const deleteHouse = await House.destroy({
+            where:{
+                id:request.params.id
+            }
+        })
+        response.status(202).send()
+    } catch (error) {
+        next(error)
+    }
+})
 
 
 export default houseRouter

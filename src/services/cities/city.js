@@ -7,7 +7,7 @@ const cityRouter = express.Router()
 cityRouter.get("/", async(request, response, next)=> {
     try {
         const city = await City.findOne({
-            include:House
+            include: User
         })
         response.send(city)
     } catch (error) {

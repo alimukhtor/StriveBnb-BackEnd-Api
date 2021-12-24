@@ -31,6 +31,9 @@ House.belongsTo(User, { onDelete: "CASCADE" })
 City.hasMany(House, { onDelete: "CASCADE" })
 House.belongsTo(City, { onDelete: "CASCADE" })
 
+User.belongsToMany(City, { through: House });
+City.belongsToMany(User, { through: House });
+
 export {User, House, City}
 
 // ************* ENDPOINTS HERE ************************

@@ -23,6 +23,10 @@ const House = sequelize.define("house", {
     floor:{
         type:DataTypes.INTEGER,
         allowNull:false
+    },
+    beach:{
+        type:DataTypes.BOOLEAN,
+        allowNull:false
     }
 })
 

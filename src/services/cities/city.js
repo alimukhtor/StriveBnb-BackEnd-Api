@@ -1,13 +1,23 @@
 import express from 'express'
 import {City, House, User} from '../../server.js'
+import { Op } from "sequelize";
 
 const cityRouter = express.Router()
 
 
 cityRouter.get("/", async(request, response, next)=> {
     try {
-        const city = await City.findOne({
-            include: User
+        const city = await City.findAll({
+            include: User,
+            where:{
+                ...(request.query.search && {
+                    [Op.or]:[
+                        {
+                            name:{[Op.iLike]: `%${request.query.search}%`}
+                        }
+                    ]
+                })
+            }
         })
         response.send(city)
     } catch (error) {

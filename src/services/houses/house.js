@@ -11,9 +11,10 @@ houseRouter.get("/", async(request, response, next)=> {
             where:{
                 ...(request.query.search && {
                    [Op.or]:[
+                    
                        {
-                           beach:{[Op.iLike]:`%${request.query.search}%`}
-                       }
+                        location:{[Op.iLike]:`%${request.query.search}%`}
+                    }
                    ] 
                 })
             }

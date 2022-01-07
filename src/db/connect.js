@@ -1,15 +1,15 @@
 import {Sequelize} from 'sequelize'
 
-const {DB_URL} = process.env
+const {URL} = process.env
 
 
- const sequelize = new Sequelize(DB_URL, {dialect: "postgres",
-    // dialectOptions: {       
-    //     ssl: {
-    //         require: true,
-    //         rejectUnauthorized: false,
-    //     },
-    // }
+ const sequelize = new Sequelize(URL, {dialect: "postgres",
+    dialectOptions: {       
+        ssl: {
+            require: true,
+            rejectUnauthorized: false,
+        },
+    }
 })
 
 

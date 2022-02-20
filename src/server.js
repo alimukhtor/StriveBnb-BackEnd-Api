@@ -1,6 +1,9 @@
 import express from 'express'
 import listEndpoints from 'express-list-endpoints'
 import sequelize, { testDB } from './db/connect.js'
+import swaggerUi from 'swagger-ui-express'
+import { readFile } from 'fs/promises';
+const json = JSON.parse(await readFile(new URL('./swagger.json', import.meta.url)));
 
 // ******************** STARTING OF MODELS ******************************
 
@@ -41,7 +44,13 @@ server.use(express.json())
 server.use("/users", userRouter)
 server.use("/houses", houseRouter)
 server.use("/cities", cityRouter)
-
+server.use("/", swaggerUi.serve, swaggerUi.setup(json))
+// server.use('/', swaggerUi.serve, swaggerUi.setup(null, {
+//     swaggerUrl: '/swagger.json',
+//     swaggerOptions: {
+//       validatorUrl : null
+//     }
+//   }));
 
 
 // ************* ENDPOINTS ENDS HERE ************************

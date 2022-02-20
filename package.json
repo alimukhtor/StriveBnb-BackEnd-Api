@@ -28,6 +28,8 @@
     "node-modules": "^1.0.1",
     "nodemon": "^2.0.15",
     "pg": "^8.7.1",
-    "sequelize": "^6.12.2"
+    "sequelize": "^6.12.2",
+    "swagger-node-express": "^2.1.3",
+    "swagger-ui-express": "^4.3.0"
   }
 }

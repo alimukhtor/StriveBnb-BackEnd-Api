@@ -1,11 +1,3 @@
-# StriveBnb-BackEnd-Api
- Contains 3 tables Houses, Cities, Users
- 
- Users backend is available at : https://strivebnb-backend.herokuapp.com/users |
- Cities are available at : https://strivebnb-backend.herokuapp.com/cities |
- Houses backend is available at : https://strivebnb-backend.herokuapp.com/houses |
-
-
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
 *** that would make this better, please fork the repo and create a pull request
@@ -35,7 +27,7 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-
+<img src="https://github.com/alimukhtor/StriveBnb-BackEnd-Api/blob/main/strivebnb.jpg" width="1280" height="800"/>
 
 <!-- PROJECT LOGO -->
 <br />
@@ -46,8 +38,7 @@
 <h3 align="center">Strive BNB API</h3>
 
 <p align="center">
-Adopt to save lives :)
-<br />
+
 <a href="https://github.com/alimukhtor/StriveBnb-BackEnd-Api">View Demo</a>
 ·
 <a href="https://github.com/alimukhtor/StriveBnb-BackEnd-Api/issues">Report Bug</a>
@@ -167,17 +158,6 @@ Distributed under the BSD License. See `LICENSE` for more information.
 Izzatillo - [@twitter_handle](https://twitter.com/twitter_handle) - email
 
 Project Link: [https://github.com/javokhirbek1999/book-sharing-system](https://github.com/github_username/repo_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
-
-
 
 
 
